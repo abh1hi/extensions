@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Data Scraper Pro",
+  "version": "1.0",
+  "description": "Scrapes Instagram profiles automatically and stores data",
+  "icons": {
+    "48": "icons/icon48.png"
+  },
+  "permissions": ["storage", "scripting", "downloads"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.instagram.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": ["*://*.instagram.com/*"]
+}
